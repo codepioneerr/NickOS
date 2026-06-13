@@ -5,7 +5,7 @@
 nixPkgs = ["python312Full"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["python -m ensurepip --upgrade && python -m pip install -r requirements.txt"]
 
 [phases.build]
 cmds = ["python -c 'import ast, pathlib; [ast.parse(f.read_text()) for f in pathlib.Path(\"api\").rglob(\"*.py\")]; print(\"[nixpacks] syntax OK\")'"]
