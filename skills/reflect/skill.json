@@ -1,0 +1,14 @@
+{
+  "name": "reflect",
+  "version": "1.0.0",
+  "description": "End-of-day reflection powered by Claude Haiku + hybrid memory search",
+  "author": "nickos",
+  "commands": [
+    {
+      "command": "reflect",
+      "description": "End-of-day reflection + memory search",
+      "handler": "reflect_handler"
+    }
+  ],
+  "nlu_handler": "memory_search_handler"
+}

@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  background: #0a0a0a;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  overscroll-behavior: none;
+}
+
+/* Safe area for iPhone notch/home bar */
+.safe-top    { padding-top: env(safe-area-inset-top, 16px); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom, 16px); }
+
+/* Scrollable content area above bottom nav */
+.page-scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep scrollable */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Bottom nav height token */
+.bottom-nav-h { height: 72px; }
+
+/* Smooth transitions */
+.page-enter {
+  animation: slideUp 0.25s ease-out;
+}
+
+/* Ring animation */
+@keyframes ring-fill {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: var(--dash-offset); }
+}
+
+.ring-arc {
+  animation: ring-fill 0.8s ease-out forwards;
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+
+/* Shimmer loading */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+/* Pulse dot */
+.pulse-dot::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #7c3aed;
+  margin-right: 6px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Desktop overrides ─────────────────────────────────────────────── */
+
+/* Health ring: 112px mobile → 200px desktop */
+@media (min-width: 1024px) {
+  .health-ring-wrap {
+    /* parent div in HealthRing */
+  }
+  .health-ring-wrap > div {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+/* Cards: more padding on desktop */
+@media (min-width: 1024px) {
+  .card-desktop { padding: 1.5rem; }
+}
+
+/* Scrollbar styling for desktop */
+@media (min-width: 1024px) {
+  main::-webkit-scrollbar       { width: 4px; }
+  main::-webkit-scrollbar-track { background: transparent; }
+  main::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+  main::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+  main { scrollbar-width: thin; scrollbar-color: #2a2a2a transparent; }
+}
+
+/* On desktop, root fills viewport — scrolling handled by <main> */
+@media (min-width: 1024px) {
+  html, body, #root {
+    height: 100%;
+    overflow: hidden;
+  }
+}

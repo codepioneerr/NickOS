@@ -1,0 +1,33 @@
+{
+  "name": "health",
+  "version": "1.0.0",
+  "description": "Log sleep, meals, water, and workouts; view weekly health stats",
+  "author": "nickos",
+  "commands": [
+    {
+      "command": "slept",
+      "description": "Log last night's sleep",
+      "handler": "slept_handler"
+    },
+    {
+      "command": "ate",
+      "description": "Log a meal",
+      "handler": "ate_handler"
+    },
+    {
+      "command": "water",
+      "description": "Log a glass of water (+1/8)",
+      "handler": "water_handler"
+    },
+    {
+      "command": "workout",
+      "description": "Log workout done for today",
+      "handler": "workout_handler"
+    },
+    {
+      "command": "health",
+      "description": "Weekly health dashboard",
+      "handler": "health_handler"
+    }
+  ]
+}

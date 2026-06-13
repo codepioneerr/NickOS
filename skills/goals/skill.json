@@ -1,0 +1,13 @@
+{
+  "name": "goals",
+  "version": "1.0.0",
+  "description": "View, add, and complete active goals stored in MEMORY.md",
+  "author": "nickos",
+  "commands": [
+    {
+      "command": "goal",
+      "description": "View / add / complete goals",
+      "handler": "goal_handler"
+    }
+  ]
+}

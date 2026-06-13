@@ -1,0 +1,54 @@
+# ── Secrets — NEVER commit ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# Gmail OAuth credentials + tokens
+gmail/credentials.json
+gmail/token.json
+gmail/tokens/*_token.json
+gmail/tokens/accounts_registry.json
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+dist/
+build/
+*.pyo
+
+# ── Node ──────────────────────────────────────────────────────────────────────
+node_modules/
+.next/
+nickos-dashboard/dist/
+.DS_Store
+
+# ── SQLite ────────────────────────────────────────────────────────────────────
+db/nickos.db
+db/nickos.db-journal
+db/nickos.db-shm
+db/nickos.db-wal
+data/*.db
+data/*.sqlite
+
+# ── Memory / daily logs (personal data — keep local + backed up separately) ──
+memory/daily_logs/
+memory/MEMORY.md
+memory/USER.md
+memory/SOUL.md
+memory/*.md
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+.vercel
+*.DS_Store
+*.swp
+*.swo
+tmp/

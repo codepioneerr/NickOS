@@ -1,0 +1,18 @@
+{
+  "name": "focus",
+  "version": "1.0.0",
+  "description": "Lock in your #1 focus task and log completed items",
+  "author": "nickos",
+  "commands": [
+    {
+      "command": "focus",
+      "description": "Lock in your #1 task",
+      "handler": "focus_handler"
+    },
+    {
+      "command": "done",
+      "description": "Log a completed item",
+      "handler": "done_handler"
+    }
+  ]
+}

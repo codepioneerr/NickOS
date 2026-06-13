@@ -1,0 +1,13 @@
+{
+  "name": "email",
+  "version": "1.0.0",
+  "description": "Triage all Gmail accounts via Claude Haiku — Act Now / Opportunity / FYI / Junk",
+  "author": "nickos",
+  "commands": [
+    {
+      "command": "email",
+      "description": "Classify inbox — Act Now / Opportunity / FYI / Junk",
+      "handler": "email_handler"
+    }
+  ]
+}
