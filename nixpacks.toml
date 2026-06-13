@@ -2,13 +2,13 @@
 # (Bot service uses same repo but different start command — set in Railway UI)
 
 [phases.setup]
-nixPkgs = ["python312"]
+nixPkgs = ["python312Full"]
 
 [phases.install]
 cmds = ["pip install -r requirements.txt"]
 
 [phases.build]
-cmds = ["python -c 'import config; print(\"[nixpacks] config.py loaded OK\")'"]
+cmds = ["python -c 'import ast, pathlib; [ast.parse(f.read_text()) for f in pathlib.Path(\"api\").rglob(\"*.py\")]; print(\"[nixpacks] syntax OK\")'"]
 
 [start]
 cmd = "python db/schema.py && uvicorn api.main:app --host 0.0.0.0 --port $PORT"
